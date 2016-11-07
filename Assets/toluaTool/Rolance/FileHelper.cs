@@ -77,6 +77,20 @@ namespace Rolance
                 }
             }
         }
+
+        public void DelFile(string directory = "")
+        {
+            string sPath = string.Empty;
+            if (string.IsNullOrEmpty(directory))
+            {
+                sPath = Application.dataPath + pathPrefix;
+            }
+            else
+            {
+                sPath = directory;
+            }
+            Directory.Delete(sPath,true);
+        }
     }
 
 }

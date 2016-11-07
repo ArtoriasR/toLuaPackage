@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Reflection;
 using LuaInterface;
 using System.Collections.Generic;
+using Rolance.tolua;
 
 public class LuaToolEditor
 {
@@ -44,7 +45,7 @@ public class LuaToolEditor
         ScriptableObject.CreateInstance<MyDoCreateScriptAsset>(),
         GetSelectedPathOrFallback() + "/New Lua.lua",
         null,
-       "Assets/Editor/template.lua");
+       "Assets/toluaTool/Editor/template.lua");
     }
 
     public static string GetSelectedPathOrFallback()
@@ -67,7 +68,7 @@ public class LuaToolEditor
     public static void CreateAutoComplete()
     {
         Debug.Log("CreateAutoComplete");
-        Rolance.AutoCompleteExport.Clear();
+        AutoCompleteExport.Clear();
         
         if (EditorApplication.isCompiling)
         {
@@ -104,6 +105,12 @@ public class LuaToolEditor
             Generate(CustomSettings.saveDir);
         }
 
+        if (ExportSetting.ZipFile)
+        {
+            AutoCompleteExport.ZipAutoCompletionToFile();
+            Rolance.FileHelper.Instance.DelFile();
+        }
+
         Debug.Log("Generate lua binding files over");
         ToLuaExport.allTypes.Clear();
         allTypes.Clear();
@@ -129,6 +136,8 @@ public class LuaToolEditor
         }
         exportName = wrapClassName + "Wrap";
 
+        AutoCompleteExport.AddExportClass(exportName,type);
+
         if (type.IsEnum)
         {
             GenEnum();
@@ -139,10 +148,9 @@ public class LuaToolEditor
             InitProperty();
         }
 
-
-
-        Rolance.AutoCompleteExport.ExportClass(exportName);
-        Rolance.AutoCompleteExport.ExportFile(exportName);
+        AutoCompleteExport.ExportClass(exportName);
+        AutoCompleteExport.ExportFile(exportName);
+        
     }
 
     static void GenEnum()
@@ -161,7 +169,7 @@ public class LuaToolEditor
         fields = list.ToArray();
         for (int i = 0; i < fields.Length; i++)
         {
-            Rolance.AutoCompleteExport.AddExportEnum(exportName, fields[i]);
+            AutoCompleteExport.AddExportEnum(exportName, fields[i]);
         }
         /*
         sb.AppendLineEx("\tpublic static void Register(LuaState L)");
@@ -238,7 +246,7 @@ public class LuaToolEditor
             }
             else
             {
-                Rolance.AutoCompleteExport.AddExportMethod(exportName, list[i]);
+                AutoCompleteExport.AddExportMethod(exportName, list[i]);
             }
         }
     }
@@ -252,7 +260,7 @@ public class LuaToolEditor
 
         for (int i = 0; i < fieldList.Count; i++)
         {
-            Rolance.AutoCompleteExport.AddExportProperty(exportName, fieldList[i]);
+            AutoCompleteExport.AddExportProperty(exportName, fieldList[i]);
         }
     }
     
