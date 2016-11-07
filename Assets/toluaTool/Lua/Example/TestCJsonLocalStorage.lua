@@ -30,13 +30,3 @@ function TestCJsonLocalStorage.create()
 end
 
 
-function SaveFile(fileName,tab)
-	file_save(fileName,cjson.encode(tab))
-end
-
-function LoadFile(fileName)
-	local loadedFile = file_load(fileName)
-	local jsoncode = cjson.decode(loadedFile)
-
-	return jsoncode
-end

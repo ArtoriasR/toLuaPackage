@@ -1,6 +1,6 @@
 require("Utils")
 require("Define")
-require("Game")
+require("GameEntrance")
 
 LuaEntrance = {}
 
@@ -13,7 +13,7 @@ function LuaEntrance.create()
 	this.name = "LuaEntrance"
 
 	function this:init()
-		Game.create().init()
+		GameEntrance.create().init()
 	end
 
 	return this
