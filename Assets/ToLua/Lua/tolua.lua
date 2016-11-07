@@ -10,8 +10,9 @@ if jit then
 	print("jit", jit.status())
 	print(string.format("os: %s, arch: %s", jit.os, jit.arch))
 end
-
+print("begin debug")
 if DebugServerIp then  
+	print("start debug")
   require("mobdebug").start(DebugServerIp)
 end
 
