@@ -1,0 +1,15 @@
+{
+	"scope": "source.lua -variable.other.lua",
+
+	"completions":
+	[
+		{"trigger":"Debugger","contents":"Debugger"},
+		{"trigger":"Debugger.useLog\t(type:Boolean)","contents":"Debugger.useLog"},
+		{"trigger":"Debugger.threadStack\t(type:String)","contents":"Debugger.threadStack"},
+		{"trigger":"Debugger.logger\t(type:ILogger)","contents":"Debugger.logger"},
+		{"trigger":"Debugger.LogException\t(Exception)","contents":"LuaInterface.Debugger.LogException(${1:1_Exception})"},
+		{"trigger":"Debugger.LogError\t(String)","contents":"LuaInterface.Debugger.LogError(${1:1_String})"},
+		{"trigger":"Debugger.LogWarning\t(String)","contents":"LuaInterface.Debugger.LogWarning(${1:1_String})"},
+		{"trigger":"Debugger.Log\t(String)","contents":"LuaInterface.Debugger.Log(${1:1_String})"},
+	]
+}

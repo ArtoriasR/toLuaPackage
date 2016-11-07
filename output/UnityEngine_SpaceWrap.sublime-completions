@@ -1,0 +1,10 @@
+{
+	"scope": "source.lua -variable.other.lua",
+
+	"completions":
+	[
+		{"trigger":"Space","contents":"Space"},
+		{"trigger":"UnityEngine.Space.World\t(type:)","contents":"UnityEngine.Space.World"},
+		{"trigger":"UnityEngine.Space.Self\t(type:)","contents":"UnityEngine.Space.Self"},
+	]
+}

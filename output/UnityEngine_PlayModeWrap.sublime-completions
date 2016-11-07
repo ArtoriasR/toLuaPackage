@@ -1,0 +1,10 @@
+{
+	"scope": "source.lua -variable.other.lua",
+
+	"completions":
+	[
+		{"trigger":"PlayMode","contents":"PlayMode"},
+		{"trigger":"UnityEngine.PlayMode.StopSameLayer\t(type:)","contents":"UnityEngine.PlayMode.StopSameLayer"},
+		{"trigger":"UnityEngine.PlayMode.StopAll\t(type:)","contents":"UnityEngine.PlayMode.StopAll"},
+	]
+}

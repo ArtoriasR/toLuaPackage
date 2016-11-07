@@ -1,0 +1,32 @@
+{
+	"scope": "source.lua -variable.other.lua",
+
+	"completions":
+	[
+		{"trigger":"Texture","contents":"Texture"},
+		{"trigger":"Texture.FindObjectOfType\t(Type)","contents":"${1:1_Object} UnityEngine.Object.FindObjectOfType(${2:2_Type})"},
+		{"trigger":"Texture.FindObjectsOfType\t(Type)","contents":"${1:1_Object[]} UnityEngine.Object.FindObjectsOfType(${2:2_Type})"},
+		{"trigger":"Texture.Instantiate\t(Object,Vector3,Quaternion)","contents":"${1:1_Object} UnityEngine.Object.Instantiate(${2:2_Object},${3:3_Vector3},${4:4_Quaternion})"},
+		{"trigger":"Texture:GetInstanceID","contents":"${1:1_Int32} ${2:2_UnityEngine.Object}:GetInstanceID()"},
+		{"trigger":"Texture:GetHashCode","contents":"${1:1_Int32} ${2:2_UnityEngine.Object}:GetHashCode()"},
+		{"trigger":"Texture:Equals\t(Object)","contents":"${1:1_Boolean} ${2:2_UnityEngine.Object}:Equals(${3:3_Object})"},
+		{"trigger":"Texture:ToString","contents":"${1:1_System.String} ${2:2_UnityEngine.Object}:ToString()"},
+		{"trigger":"Texture.DestroyObject\t(Object,Single)","contents":"UnityEngine.Object.DestroyObject(${1:1_Object},${2:2_Single})"},
+		{"trigger":"Texture.hideFlags\t(R&W_HideFlags)","contents":"${1:1_Texture}.hideFlags"},
+		{"trigger":"Texture.DontDestroyOnLoad\t(Object)","contents":"UnityEngine.Object.DontDestroyOnLoad(${1:1_Object})"},
+		{"trigger":"Texture.name\t(R&W_System.String)","contents":"${1:1_Texture}.name"},
+		{"trigger":"Texture.DestroyImmediate\t(Object,Boolean)","contents":"UnityEngine.Object.DestroyImmediate(${1:1_Object},${2:2_Boolean})"},
+		{"trigger":"Texture.Destroy\t(Object,Single)","contents":"UnityEngine.Object.Destroy(${1:1_Object},${2:2_Single})"},
+		{"trigger":"Texture:GetNativeTexturePtr","contents":"${1:1_IntPtr} ${2:2_UnityEngine.Texture}:GetNativeTexturePtr()"},
+		{"trigger":"Texture.texelSize	(R_Vector2)","contents":"${1:1_Texture}.texelSize"},
+		{"trigger":"Texture.mipMapBias\t(R&W_Single)","contents":"${1:1_Texture}.mipMapBias"},
+		{"trigger":"Texture.wrapMode\t(R&W_TextureWrapMode)","contents":"${1:1_Texture}.wrapMode"},
+		{"trigger":"Texture.anisoLevel\t(R&W_Int32)","contents":"${1:1_Texture}.anisoLevel"},
+		{"trigger":"Texture.filterMode\t(R&W_FilterMode)","contents":"${1:1_Texture}.filterMode"},
+		{"trigger":"Texture.height\t(R&W_Int32)","contents":"${1:1_Texture}.height"},
+		{"trigger":"Texture.width\t(R&W_Int32)","contents":"${1:1_Texture}.width"},
+		{"trigger":"Texture.SetGlobalAnisotropicFilteringLimits\t(Int32,Int32)","contents":"UnityEngine.Texture.SetGlobalAnisotropicFilteringLimits(${1:1_Int32},${2:2_Int32})"},
+		{"trigger":"Texture.anisotropicFiltering\t(R&W_AnisotropicFiltering)","contents":"Texture.anisotropicFiltering"},
+		{"trigger":"Texture.masterTextureLimit\t(R&W_Int32)","contents":"Texture.masterTextureLimit"},
+	]
+}

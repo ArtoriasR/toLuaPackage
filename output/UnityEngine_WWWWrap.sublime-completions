@@ -1,0 +1,34 @@
+{
+	"scope": "source.lua -variable.other.lua",
+
+	"completions":
+	[
+		{"trigger":"WWW","contents":"WWW"},
+		{"trigger":"WWW.LoadFromCacheOrDownload\t(String,Int32)","contents":"${1:1_WWW} UnityEngine.WWW.LoadFromCacheOrDownload(${2:2_String},${3:3_Int32})"},
+		{"trigger":"WWW.threadPriority\t(R&W_ThreadPriority)","contents":"${1:1_WWW}.threadPriority"},
+		{"trigger":"WWW.assetBundle	(R_AssetBundle)","contents":"${1:1_WWW}.assetBundle"},
+		{"trigger":"WWW.url	(R_System.String)","contents":"${1:1_WWW}.url"},
+		{"trigger":"WWW.oggVorbis	(R_AudioClip)","contents":"${1:1_WWW}.oggVorbis"},
+		{"trigger":"WWW.bytesDownloaded	(R_Int32)","contents":"${1:1_WWW}.bytesDownloaded"},
+		{"trigger":"WWW.uploadProgress	(R_Single)","contents":"${1:1_WWW}.uploadProgress"},
+		{"trigger":"WWW.progress	(R_Single)","contents":"${1:1_WWW}.progress"},
+		{"trigger":"WWW.isDone	(R_Boolean)","contents":"${1:1_WWW}.isDone"},
+		{"trigger":"WWW:LoadImageIntoTexture\t(Texture2D)","contents":"${1:1_UnityEngine.WWW}:LoadImageIntoTexture(${2:2_Texture2D})"},
+		{"trigger":"WWW.movie	(R_MovieTexture)","contents":"${1:1_WWW}.movie"},
+		{"trigger":"WWW:GetAudioClipCompressed","contents":"${1:1_AudioClip} ${2:2_UnityEngine.WWW}:GetAudioClipCompressed()"},
+		{"trigger":"WWW:GetAudioClip\t(Boolean)","contents":"${1:1_AudioClip} ${2:2_UnityEngine.WWW}:GetAudioClip(${3:3_Boolean})"},
+		{"trigger":"WWW.audioClip	(R_AudioClip)","contents":"${1:1_WWW}.audioClip"},
+		{"trigger":"WWW.textureNonReadable	(R_Texture2D)","contents":"${1:1_WWW}.textureNonReadable"},
+		{"trigger":"WWW.texture	(R_Texture2D)","contents":"${1:1_WWW}.texture"},
+		{"trigger":"WWW.error	(R_System.String)","contents":"${1:1_WWW}.error"},
+		{"trigger":"WWW.size	(R_Int32)","contents":"${1:1_WWW}.size"},
+		{"trigger":"WWW.bytes	(R_Byte[])","contents":"${1:1_WWW}.bytes"},
+		{"trigger":"WWW.data	(R_System.String)","contents":"${1:1_WWW}.data"},
+		{"trigger":"WWW.text	(R_System.String)","contents":"${1:1_WWW}.text"},
+		{"trigger":"WWW.responseHeaders	(R_System.Collections.Generic.Dictionary`2[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]])","contents":"${1:1_WWW}.responseHeaders"},
+		{"trigger":"WWW.UnEscapeURL\t(String)","contents":"${1:1_System.String} UnityEngine.WWW.UnEscapeURL(${2:2_String})"},
+		{"trigger":"WWW.EscapeURL\t(String)","contents":"${1:1_System.String} UnityEngine.WWW.EscapeURL(${2:2_String})"},
+		{"trigger":"WWW:InitWWW\t(String,Byte[],String[])","contents":"${1:1_UnityEngine.WWW}:InitWWW(${2:2_String},${3:3_Byte[]},${4:4_String[]})"},
+		{"trigger":"WWW:Dispose","contents":"${1:1_UnityEngine.WWW}:Dispose()"},
+	]
+}

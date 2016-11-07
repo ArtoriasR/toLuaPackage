@@ -1,0 +1,37 @@
+{
+	"scope": "source.lua -variable.other.lua",
+
+	"completions":
+	[
+		{"trigger":"AssetBundle","contents":"AssetBundle"},
+		{"trigger":"AssetBundle.FindObjectOfType\t(Type)","contents":"${1:1_Object} UnityEngine.Object.FindObjectOfType(${2:2_Type})"},
+		{"trigger":"AssetBundle.FindObjectsOfType\t(Type)","contents":"${1:1_Object[]} UnityEngine.Object.FindObjectsOfType(${2:2_Type})"},
+		{"trigger":"AssetBundle.Instantiate\t(Object,Vector3,Quaternion)","contents":"${1:1_Object} UnityEngine.Object.Instantiate(${2:2_Object},${3:3_Vector3},${4:4_Quaternion})"},
+		{"trigger":"AssetBundle:GetInstanceID","contents":"${1:1_Int32} ${2:2_UnityEngine.Object}:GetInstanceID()"},
+		{"trigger":"AssetBundle:GetHashCode","contents":"${1:1_Int32} ${2:2_UnityEngine.Object}:GetHashCode()"},
+		{"trigger":"AssetBundle:Equals\t(Object)","contents":"${1:1_Boolean} ${2:2_UnityEngine.Object}:Equals(${3:3_Object})"},
+		{"trigger":"AssetBundle:ToString","contents":"${1:1_System.String} ${2:2_UnityEngine.Object}:ToString()"},
+		{"trigger":"AssetBundle.DestroyObject\t(Object,Single)","contents":"UnityEngine.Object.DestroyObject(${1:1_Object},${2:2_Single})"},
+		{"trigger":"AssetBundle.hideFlags\t(R&W_HideFlags)","contents":"${1:1_AssetBundle}.hideFlags"},
+		{"trigger":"AssetBundle.DontDestroyOnLoad\t(Object)","contents":"UnityEngine.Object.DontDestroyOnLoad(${1:1_Object})"},
+		{"trigger":"AssetBundle.name\t(R&W_System.String)","contents":"${1:1_AssetBundle}.name"},
+		{"trigger":"AssetBundle.DestroyImmediate\t(Object,Boolean)","contents":"UnityEngine.Object.DestroyImmediate(${1:1_Object},${2:2_Boolean})"},
+		{"trigger":"AssetBundle.Destroy\t(Object,Single)","contents":"UnityEngine.Object.Destroy(${1:1_Object},${2:2_Single})"},
+		{"trigger":"AssetBundle:GetAllScenePaths","contents":"${1:1_System.String[]} ${2:2_UnityEngine.AssetBundle}:GetAllScenePaths()"},
+		{"trigger":"AssetBundle:GetAllAssetNames","contents":"${1:1_System.String[]} ${2:2_UnityEngine.AssetBundle}:GetAllAssetNames()"},
+		{"trigger":"AssetBundle:Unload\t(Boolean)","contents":"${1:1_UnityEngine.AssetBundle}:Unload(${2:2_Boolean})"},
+		{"trigger":"AssetBundle:LoadAllAssetsAsync","contents":"${1:1_AssetBundleRequest} ${2:2_UnityEngine.AssetBundle}:LoadAllAssetsAsync()"},
+		{"trigger":"AssetBundle:LoadAllAssets","contents":"${1:1_Object[]} ${2:2_UnityEngine.AssetBundle}:LoadAllAssets()"},
+		{"trigger":"AssetBundle:LoadAssetWithSubAssetsAsync\t(String)","contents":"${1:1_AssetBundleRequest} ${2:2_UnityEngine.AssetBundle}:LoadAssetWithSubAssetsAsync(${3:3_String})"},
+		{"trigger":"AssetBundle:LoadAssetWithSubAssets\t(String)","contents":"${1:1_Object[]} ${2:2_UnityEngine.AssetBundle}:LoadAssetWithSubAssets(${3:3_String})"},
+		{"trigger":"AssetBundle:LoadAssetAsync\t(String)","contents":"${1:1_AssetBundleRequest} ${2:2_UnityEngine.AssetBundle}:LoadAssetAsync(${3:3_String})"},
+		{"trigger":"AssetBundle:LoadAsset\t(String)","contents":"${1:1_Object} ${2:2_UnityEngine.AssetBundle}:LoadAsset(${3:3_String})"},
+		{"trigger":"AssetBundle:Contains\t(String)","contents":"${1:1_Boolean} ${2:2_UnityEngine.AssetBundle}:Contains(${3:3_String})"},
+		{"trigger":"AssetBundle.isStreamedSceneAssetBundle	(R_Boolean)","contents":"${1:1_AssetBundle}.isStreamedSceneAssetBundle"},
+		{"trigger":"AssetBundle.mainAsset	(R_Object)","contents":"${1:1_AssetBundle}.mainAsset"},
+		{"trigger":"AssetBundle.LoadFromMemory\t(Byte[],UInt32)","contents":"${1:1_AssetBundle} UnityEngine.AssetBundle.LoadFromMemory(${2:2_Byte[]},${3:3_UInt32})"},
+		{"trigger":"AssetBundle.LoadFromMemoryAsync\t(Byte[],UInt32)","contents":"${1:1_AssetBundleCreateRequest} UnityEngine.AssetBundle.LoadFromMemoryAsync(${2:2_Byte[]},${3:3_UInt32})"},
+		{"trigger":"AssetBundle.LoadFromFile\t(String,UInt32,UInt64)","contents":"${1:1_AssetBundle} UnityEngine.AssetBundle.LoadFromFile(${2:2_String},${3:3_UInt32},${4:4_UInt64})"},
+		{"trigger":"AssetBundle.LoadFromFileAsync\t(String,UInt32,UInt64)","contents":"${1:1_AssetBundleCreateRequest} UnityEngine.AssetBundle.LoadFromFileAsync(${2:2_String},${3:3_UInt32},${4:4_UInt64})"},
+	]
+}

@@ -1,0 +1,22 @@
+{
+	"scope": "source.lua -variable.other.lua",
+
+	"completions":
+	[
+		{"trigger":"Time","contents":"Time"},
+		{"trigger":"Time.captureFramerate\t(R&W_Int32)","contents":"Time.captureFramerate"},
+		{"trigger":"Time.realtimeSinceStartup	(R_Single)","contents":"Time.realtimeSinceStartup"},
+		{"trigger":"Time.renderedFrameCount	(R_Int32)","contents":"Time.renderedFrameCount"},
+		{"trigger":"Time.frameCount	(R_Int32)","contents":"Time.frameCount"},
+		{"trigger":"Time.timeScale\t(R&W_Single)","contents":"Time.timeScale"},
+		{"trigger":"Time.smoothDeltaTime	(R_Single)","contents":"Time.smoothDeltaTime"},
+		{"trigger":"Time.maximumDeltaTime\t(R&W_Single)","contents":"Time.maximumDeltaTime"},
+		{"trigger":"Time.fixedDeltaTime\t(R&W_Single)","contents":"Time.fixedDeltaTime"},
+		{"trigger":"Time.unscaledDeltaTime	(R_Single)","contents":"Time.unscaledDeltaTime"},
+		{"trigger":"Time.unscaledTime	(R_Single)","contents":"Time.unscaledTime"},
+		{"trigger":"Time.fixedTime	(R_Single)","contents":"Time.fixedTime"},
+		{"trigger":"Time.deltaTime	(R_Single)","contents":"Time.deltaTime"},
+		{"trigger":"Time.timeSinceLevelLoad	(R_Single)","contents":"Time.timeSinceLevelLoad"},
+		{"trigger":"Time.time	(R_Single)","contents":"Time.time"},
+	]
+}

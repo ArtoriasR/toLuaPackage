@@ -1,0 +1,10 @@
+{
+	"scope": "source.lua -variable.other.lua",
+
+	"completions":
+	[
+		{"trigger":"TrackedReference","contents":"TrackedReference"},
+		{"trigger":"TrackedReference:GetHashCode","contents":"${1:1_Int32} ${2:2_UnityEngine.TrackedReference}:GetHashCode()"},
+		{"trigger":"TrackedReference:Equals\t(Object)","contents":"${1:1_Boolean} ${2:2_UnityEngine.TrackedReference}:Equals(${3:3_Object})"},
+	]
+}

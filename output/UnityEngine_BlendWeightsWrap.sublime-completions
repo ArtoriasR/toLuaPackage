@@ -1,0 +1,11 @@
+{
+	"scope": "source.lua -variable.other.lua",
+
+	"completions":
+	[
+		{"trigger":"BlendWeights","contents":"BlendWeights"},
+		{"trigger":"UnityEngine.BlendWeights.OneBone\t(type:)","contents":"UnityEngine.BlendWeights.OneBone"},
+		{"trigger":"UnityEngine.BlendWeights.TwoBones\t(type:)","contents":"UnityEngine.BlendWeights.TwoBones"},
+		{"trigger":"UnityEngine.BlendWeights.FourBones\t(type:)","contents":"UnityEngine.BlendWeights.FourBones"},
+	]
+}
