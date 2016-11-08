@@ -134,6 +134,9 @@ public static class CustomSettings
         _GT(typeof(RenderSettings)),                                                   
         _GT(typeof(BlendWeights)),           
         _GT(typeof(RenderTexture)),
+
+        _GT(typeof(UnityEngine.Events.UnityEvent)),
+        _GT(typeof(UnityEngine.UI.Button.ButtonClickedEvent)),
     };
 
     public static List<Type> dynamicList = new List<Type>()

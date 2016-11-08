@@ -72,6 +72,7 @@ public class LuaToolEditor
 
         ExportSetting.ExportNameSpace = true;
         ExportSetting.ZipFile = false;
+        ExportSetting.exportBaseTypeMethod = false;
         
         if (EditorApplication.isCompiling)
         {

@@ -81,8 +81,10 @@ namespace Rolance.tolua
         {
             AutoCompleteExport.ExportHead(exportClassName);
             //输出类名
-            if(ExportSetting.ExportNameSpace)
-                FileHelper.Instance.Write(exportClassName, "\t\t{\"trigger\":\"" + type.FullName + "\",\"contents\":\"" + type.FullName + "\"},");
+            if (ExportSetting.ExportNameSpace) {
+                string nameWithNameSpace = type.Namespace + "." + type.Name;
+                FileHelper.Instance.Write(exportClassName, "\t\t{\"trigger\":\"" + nameWithNameSpace + "\",\"contents\":\"" + nameWithNameSpace + "\"},");
+            }
 
             foreach (var item in enumDict)
             {

@@ -4,7 +4,7 @@
 	"completions":
 	[
 		{"trigger":"UnityEngine.TrackedReference","contents":"UnityEngine.TrackedReference"},
-		{"trigger":"TrackedReference:GetHashCode","contents":"${1:Int32} ${2:UnityEngine.TrackedReference}:GetHashCode()"},
-		{"trigger":"TrackedReference:Equals\t(Object:o)","contents":"${1:Boolean} ${2:UnityEngine.TrackedReference}:Equals(${3:Object:o})"},
+		{"trigger":"TrackedReference:GetHashCode","contents":"${1 Int32} ${2 UnityEngine.TrackedReference}:GetHashCode()"},
+		{"trigger":"TrackedReference:Equals\t(Object:o)","contents":"${1 Boolean} ${2 UnityEngine.TrackedReference}:Equals(${3 Object:o})"},
 	]
 }
