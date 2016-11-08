@@ -1,0 +1,10 @@
+{
+	"scope": "source.lua -variable.other.lua",
+
+	"completions":
+	[
+		{"trigger":"UnityEngine.QueueMode","contents":"UnityEngine.QueueMode"},
+		{"trigger":"UnityEngine.QueueMode.CompleteOthers\t(type:)","contents":"UnityEngine.QueueMode.CompleteOthers"},
+		{"trigger":"UnityEngine.QueueMode.PlayNow\t(type:)","contents":"UnityEngine.QueueMode.PlayNow"},
+	]
+}

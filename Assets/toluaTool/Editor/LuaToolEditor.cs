@@ -69,6 +69,9 @@ public class LuaToolEditor
     {
         Debug.Log("CreateAutoComplete");
         AutoCompleteExport.Clear();
+
+        ExportSetting.ExportNameSpace = true;
+        ExportSetting.ZipFile = false;
         
         if (EditorApplication.isCompiling)
         {

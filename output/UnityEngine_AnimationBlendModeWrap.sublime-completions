@@ -1,0 +1,10 @@
+{
+	"scope": "source.lua -variable.other.lua",
+
+	"completions":
+	[
+		{"trigger":"UnityEngine.AnimationBlendMode","contents":"UnityEngine.AnimationBlendMode"},
+		{"trigger":"UnityEngine.AnimationBlendMode.Blend\t(type:)","contents":"UnityEngine.AnimationBlendMode.Blend"},
+		{"trigger":"UnityEngine.AnimationBlendMode.Additive\t(type:)","contents":"UnityEngine.AnimationBlendMode.Additive"},
+	]
+}
