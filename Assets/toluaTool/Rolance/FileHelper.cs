@@ -91,6 +91,11 @@ namespace Rolance
             }
             Directory.Delete(sPath,true);
         }
+
+        public void CopyFile(string source,string target,bool delSource = false)
+        {
+            File.Copy(source, target, true);
+        }
     }
 
 }

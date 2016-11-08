@@ -26,10 +26,6 @@ public class LuaToolEditor
     static FieldInfo[] fields = null;
     static MetaOp op = MetaOp.None;
 
-    //static List<MethodInfo> getItems = new List<MethodInfo>();   //特殊属性
-    //static List<MethodInfo> setItems = new List<MethodInfo>();
-
-
     static PropertyInfo[] props = null;
     static List<PropertyInfo> propsPrivate = new List<PropertyInfo>();
     static List<PropertyInfo> propList = new List<PropertyInfo>();  //非静态属性
@@ -498,4 +494,52 @@ class MyDoCreateScriptAsset : EndNameEditAction
         return AssetDatabase.LoadAssetAtPath(pathName, typeof(UnityEngine.Object));
     }
 
+    [MenuItem("Lua/CopyAutoComplete")]
+    public static void TestWindow()
+    {
+        Debug.Log("TestWindow");
+        MyWindow window = EditorWindow.GetWindow(typeof(MyWindow), false, "生成代码提示文件", true) as MyWindow;
+    }
+
+}
+
+class MyWindow : EditorWindow {
+    string myString = "C:\\Users\\Artorias\\AppData\\Roaming\\Sublime Text 3\\Installed Packages";
+	bool groupEnabled = false;
+    bool myBool = true;
+	float myFloat = 1.23f;
+
+	// Add menu named "My Window" to the Window menu
+	//添加菜单项My Window到Window菜单
+    [MenuItem ("Window/My Window")]
+	static void Init () {
+		// Get existing open window or if none, make a new one:
+		//获取现有的打开窗口或如果没有，创建一个新的
+        MyWindow window = EditorWindow.GetWindow(typeof(MyWindow),false,"",true) as MyWindow;
+	}
+
+	void OnGUI () {
+		GUILayout.Label ("Base Settings", EditorStyles.boldLabel);
+		myString = EditorGUILayout.TextField ("插件路径:", myString);
+
+        if (GUILayout.Button("OK"))
+        {
+            try
+            {
+                Rolance.FileHelper.Instance.CopyFile(Application.dataPath + "/../tolua_autocomplete.sublime-package", myString + "/" + "tolua_autocomplete.sublime-package");
+                Debug.Log("finish");
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        /*
+		groupEnabled = EditorGUILayout.BeginToggleGroup ("Optional Settings", groupEnabled);
+		myBool = EditorGUILayout.Toggle ("Toggle", myBool);
+		myFloat = EditorGUILayout.Slider ("Slider", myFloat, -3, 3);
+		EditorGUILayout.EndToggleGroup ();
+         * */
+	}
 }
