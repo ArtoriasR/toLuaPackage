@@ -504,7 +504,7 @@ class MyDoCreateScriptAsset : EndNameEditAction
 }
 
 class MyWindow : EditorWindow {
-    string myString = "C:\\Users\\Artorias\\AppData\\Roaming\\Sublime Text 3\\Installed Packages";
+    string myString = "C:\\Users\\user\\AppData\\Roaming\\Sublime Text 3\\Installed Packages";
 	bool groupEnabled = false;
     bool myBool = true;
 	float myFloat = 1.23f;
@@ -513,14 +513,15 @@ class MyWindow : EditorWindow {
 	//添加菜单项My Window到Window菜单
     [MenuItem ("Window/My Window")]
 	static void Init () {
-		// Get existing open window or if none, make a new one:
-		//获取现有的打开窗口或如果没有，创建一个新的
+        // Get existing open window or if none, make a new one:
+        //获取现有的打开窗口或如果没有，创建一个新的
         MyWindow window = EditorWindow.GetWindow(typeof(MyWindow),false,"",true) as MyWindow;
 	}
 
 	void OnGUI () {
 		GUILayout.Label ("Base Settings", EditorStyles.boldLabel);
-		myString = EditorGUILayout.TextField ("插件路径:", myString);
+        myString = myString.Replace("user", Environment.UserName);
+        myString = EditorGUILayout.TextField ("插件路径:", myString);
 
         if (GUILayout.Button("OK"))
         {
