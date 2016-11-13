@@ -171,39 +171,6 @@ public class LuaToolEditor
         {
             AutoCompleteExport.AddExportEnum(exportName, fields[i]);
         }
-        /*
-        sb.AppendLineEx("\tpublic static void Register(LuaState L)");
-        sb.AppendLineEx("\t{");
-        sb.AppendFormat("\t\tL.BeginEnum(typeof({0}));\r\n", className);
-
-        for (int i = 0; i < fields.Length; i++)
-        {
-            sb.AppendFormat("\t\tL.RegVar(\"{0}\", get_{0}, null);\r\n", fields[i].Name);
-        }
-
-        sb.AppendFormat("\t\tL.RegFunction(\"IntToEnum\", IntToEnum);\r\n");
-        sb.AppendFormat("\t\tL.EndEnum();\r\n");
-        sb.AppendLineEx("\t}");
-
-        for (int i = 0; i < fields.Length; i++)
-        {
-            sb.AppendLineEx("\r\n\t[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]");
-            sb.AppendFormat("\tstatic int get_{0}(IntPtr L)\r\n", fields[i].Name);
-            sb.AppendLineEx("\t{");
-            sb.AppendFormat("\t\tToLua.Push(L, {0}.{1});\r\n", className, fields[i].Name);
-            sb.AppendLineEx("\t\treturn 1;");
-            sb.AppendLineEx("\t}");
-        }
-
-        sb.AppendLineEx("\r\n\t[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]");
-        sb.AppendLineEx("\tstatic int IntToEnum(IntPtr L)");
-        sb.AppendLineEx("\t{");
-        sb.AppendLineEx("\t\tint arg0 = (int)LuaDLL.lua_tonumber(L, 1);");
-        sb.AppendFormat("\t\t{0} o = ({0})arg0;\r\n", className);
-        sb.AppendLineEx("\t\tToLua.Push(L, o);");
-        sb.AppendLineEx("\t\treturn 1;");
-        sb.AppendLineEx("\t}");
-         * */
     }
 
     static void InitMethods()
@@ -493,17 +460,17 @@ class MyDoCreateScriptAsset : EndNameEditAction
         AssetDatabase.ImportAsset(pathName);
         return AssetDatabase.LoadAssetAtPath(pathName, typeof(UnityEngine.Object));
     }
-
+    /*
     [MenuItem("Lua/CopyAutoComplete")]
     public static void TestWindow()
     {
         Debug.Log("TestWindow");
-        MyWindow window = EditorWindow.GetWindow(typeof(MyWindow), false, "生成代码提示文件", true) as MyWindow;
+        ToLuaToolWindow window = EditorWindow.GetWindow(typeof(ToLuaToolWindow), false, "生成代码提示文件", true) as ToLuaToolWindow;
     }
-
+    */
 }
 
-class MyWindow : EditorWindow {
+class ToLuaToolWindow : EditorWindow {
     string myString = "C:\\Users\\user\\AppData\\Roaming\\Sublime Text 3\\Installed Packages";
 	bool groupEnabled = false;
     bool myBool = true;
@@ -511,14 +478,15 @@ class MyWindow : EditorWindow {
 
 	// Add menu named "My Window" to the Window menu
 	//添加菜单项My Window到Window菜单
-    [MenuItem ("Window/My Window")]
+    [MenuItem("Lua/CopyAutoComplete")]
 	static void Init () {
         // Get existing open window or if none, make a new one:
         //获取现有的打开窗口或如果没有，创建一个新的
-        MyWindow window = EditorWindow.GetWindow(typeof(MyWindow),false,"",true) as MyWindow;
+        ToLuaToolWindow window = EditorWindow.GetWindow(typeof(ToLuaToolWindow), false, "生成代码提示文件", true) as ToLuaToolWindow;
 	}
 
 	void OnGUI () {
+        Debug.Log("OnGUI");
 		GUILayout.Label ("Base Settings", EditorStyles.boldLabel);
         myString = myString.Replace("user", Environment.UserName);
         myString = EditorGUILayout.TextField ("插件路径:", myString);
