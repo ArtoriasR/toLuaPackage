@@ -67,8 +67,8 @@ public class LuaToolEditor
         AutoCompleteExport.Clear();
 
         ExportSetting.ExportNameSpace = true;
-        ExportSetting.ZipFile = false;
-        ExportSetting.exportBaseTypeMethod = false;
+        ExportSetting.ZipFile = true;
+        ExportSetting.exportBaseTypeMethod = true;
         
         if (EditorApplication.isCompiling)
         {
@@ -478,7 +478,7 @@ class ToLuaToolWindow : EditorWindow {
 
 	// Add menu named "My Window" to the Window menu
 	//添加菜单项My Window到Window菜单
-    [MenuItem("Lua/CopyAutoComplete")]
+    [MenuItem("Lua/CreateAutoCompleteFile")]
 	static void Init () {
         // Get existing open window or if none, make a new one:
         //获取现有的打开窗口或如果没有，创建一个新的
@@ -495,6 +495,7 @@ class ToLuaToolWindow : EditorWindow {
         {
             try
             {
+                LuaToolEditor.CreateAutoComplete();
                 Rolance.FileHelper.Instance.CopyFile(Application.dataPath + "/../tolua_autocomplete.sublime-package", myString + "/" + "tolua_autocomplete.sublime-package");
                 Debug.Log("finish");
             }
@@ -504,11 +505,5 @@ class ToLuaToolWindow : EditorWindow {
                 throw;
             }
         }
-        /*
-		groupEnabled = EditorGUILayout.BeginToggleGroup ("Optional Settings", groupEnabled);
-		myBool = EditorGUILayout.Toggle ("Toggle", myBool);
-		myFloat = EditorGUILayout.Slider ("Slider", myFloat, -3, 3);
-		EditorGUILayout.EndToggleGroup ();
-         * */
 	}
 }
