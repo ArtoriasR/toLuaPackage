@@ -30,11 +30,11 @@ namespace Rolance.tolua
                 argsName = "_" + info.ReturnParameter.ToString();
                 if (info.IsStatic == false)
                 {
-                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + eName + "." + methodName + "\\t(R&W" + argsName + ")\",\"contents\":\"" + Rolance.Utils.addArgs(1, eName) + "." + methodName + "\"},");
+                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + ExportSetting.prefix + eName + "." + methodName + "\\t(R&W" + argsName + ")\",\"contents\":\"" + Rolance.Utils.addArgs(1, eName) + "." + methodName + "\"},");
                 }
                 else
                 {
-                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + eName + "." + methodName + "\\t(R&W" + argsName + ")\",\"contents\":\"" + eName + "." + methodName + "\"},");
+                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + ExportSetting.prefix + eName + "." + methodName + "\\t(R&W" + argsName + ")\",\"contents\":\"" + eName + "." + methodName + "\"},");
                 }
                 return;
             }
@@ -43,11 +43,11 @@ namespace Rolance.tolua
                 argsName = "_" + info.GetParameters()[0].ParameterType.ToString();
                 if (info.IsStatic == false)
                 {
-                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + eName + "." + methodName + "\t(W" + argsName + ")\",\"contents\":\"" + Rolance.Utils.addArgs(1, eName) + "." + methodName + "\"},");
+                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + ExportSetting.prefix + eName + "." + methodName + "\t(W" + argsName + ")\",\"contents\":\"" + Rolance.Utils.addArgs(1, eName) + "." + methodName + "\"},");
                 }
                 else
                 {
-                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + eName + "." + methodName + "\t(W" + argsName + ")\",\"contents\":\"" + eName + "." + methodName + "\"},");
+                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + ExportSetting.prefix + eName + "." + methodName + "\t(W" + argsName + ")\",\"contents\":\"" + eName + "." + methodName + "\"},");
                 }
                 return;
             }
@@ -56,11 +56,11 @@ namespace Rolance.tolua
                 argsName = "_" + info.ReturnParameter.ToString();
                 if (info.IsStatic == false)
                 {
-                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + eName + "." + methodName + "\t(R" + argsName + ")\",\"contents\":\"" + Rolance.Utils.addArgs(1, eName) + "." + methodName + "\"},");
+                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + ExportSetting.prefix + eName + "." + methodName + "\t(R" + argsName + ")\",\"contents\":\"" + Rolance.Utils.addArgs(1, eName) + "." + methodName + "\"},");
                 }
                 else
                 {
-                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + eName + "." + methodName + "\t(R" + argsName + ")\",\"contents\":\"" + eName + "." + methodName + "\"},");
+                    Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + ExportSetting.prefix + eName + "." + methodName + "\t(R" + argsName + ")\",\"contents\":\"" + eName + "." + methodName + "\"},");
                 }
                     
                 return;

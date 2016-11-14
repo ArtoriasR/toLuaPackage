@@ -64,8 +64,6 @@ public class LuaToolEditor
     public static void CreateAutoComplete()
     {
         Debug.Log("CreateAutoComplete");
-        AutoCompleteExport.Clear();
-
         ExportSetting.ExportNameSpace = true;
         ExportSetting.ZipFile = true;
         ExportSetting.exportBaseTypeMethod = true;
@@ -112,6 +110,8 @@ public class LuaToolEditor
         }
 
         Debug.Log("Generate lua binding files over");
+        Rolance.FileHelper.Instance.Clear();
+        AutoCompleteExport.Clear();
         ToLuaExport.allTypes.Clear();
         allTypes.Clear();
         AssetDatabase.Refresh();
