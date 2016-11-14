@@ -123,11 +123,11 @@ namespace Rolance.tolua
             {
                 //要从修正位中减一才是类名的idx
                 int classNameIdx = fixIdx - 1;
-                Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + eName + operationSymbol + info.Name + triggerArgs + "\",\"contents\":\"" + returnArgs + Rolance.Utils.addArgs(classNameIdx, info.DeclaringType.ToString()) + operationSymbol + info.Name + "(" + contentArgs + ")\"},");
+                Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + ExportSetting.prefix + eName + operationSymbol + info.Name + triggerArgs + "\",\"contents\":\"" + returnArgs + Rolance.Utils.addArgs(classNameIdx, info.DeclaringType.ToString()) + operationSymbol + info.Name + "(" + contentArgs + ")\"},");
             }
             else
             {
-                Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + eName + operationSymbol + info.Name + triggerArgs + "\",\"contents\":\"" + returnArgs + info.DeclaringType.ToString() + operationSymbol + info.Name + "(" + contentArgs + ")\"},");
+                Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + ExportSetting.prefix + eName + operationSymbol + info.Name + triggerArgs + "\",\"contents\":\"" + returnArgs + info.DeclaringType.ToString() + operationSymbol + info.Name + "(" + contentArgs + ")\"},");
             }
         }
     }

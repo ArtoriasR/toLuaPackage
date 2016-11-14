@@ -20,11 +20,11 @@ namespace Rolance.tolua
             
             if (fi.IsStatic)
             {
-                Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + eName + "." + propertyName + "\\t(type:" + args + ")\",\"contents\":\"" + eName + "." + propertyName + "\"},");
+                Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + ExportSetting.prefix + eName + "." + propertyName + "\\t(type:" + args + ")\",\"contents\":\"" + eName + "." + propertyName + "\"},");
             }
             else
             {
-                Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + eName + "." + propertyName + "\\t(type:" + args + ")\",\"contents\":\"" + Rolance.Utils.addArgs(1, eName) + "." + propertyName + "\"},");
+                Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + ExportSetting.prefix + eName + "." + propertyName + "\\t(type:" + args + ")\",\"contents\":\"" + Rolance.Utils.addArgs(1, eName) + "." + propertyName + "\"},");
             }
         }
     }

@@ -19,5 +19,9 @@ namespace Rolance.tolua
         /// 是否包含父类成员
         /// </summary>
         public static bool exportBaseTypeMethod = true;
+        /// <summary>
+        /// 所有自动提示前缀
+        /// </summary>
+        public static string prefix = "cc";
     }
 }

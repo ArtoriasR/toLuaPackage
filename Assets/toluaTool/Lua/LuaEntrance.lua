@@ -15,7 +15,7 @@ function LuaEntrance.create()
 	function this:init()
 		GameEntrance.create().init()
 	end
-
+	
 	return this
 end
 

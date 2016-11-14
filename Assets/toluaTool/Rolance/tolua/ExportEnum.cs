@@ -9,7 +9,7 @@ namespace Rolance.tolua
         public ExportClass ec;
         public void Export()
         {
-            Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + fi.DeclaringType + "." + fi.Name + "\\t(type:" + ")\",\"contents\":\"" + fi.DeclaringType + "." + fi.Name + "\"},");
+            Rolance.FileHelper.Instance.Write(ec.exportClassName, "\t\t{\"trigger\":\"" + ExportSetting.prefix + fi.DeclaringType + "." + fi.Name + "\\t(type:" + ")\",\"contents\":\"" + fi.DeclaringType + "." + fi.Name + "\"},");
         }
     }
 }
