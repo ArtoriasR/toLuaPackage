@@ -1,6 +1,8 @@
 ﻿using LuaInterface;
 using System.Collections.Generic;
 using System.Collections;
+using System;
+using System.Reflection;
 
 
 public static class LuaTool

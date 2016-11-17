@@ -23,5 +23,9 @@ namespace Rolance.tolua
         /// 所有自动提示前缀
         /// </summary>
         public static string prefix = "cc";
+        /// <summary>
+        /// 替换用户名
+        /// </summary>
+        public static string replaceUserNameWith = "";
     }
 }

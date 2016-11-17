@@ -59,14 +59,12 @@ public class LuaToolEditor
         return path;
     }
 
-
-    [MenuItem("Lua/CreateAutoComplete")]
     public static void CreateAutoComplete()
     {
         Debug.Log("CreateAutoComplete");
-        ExportSetting.ExportNameSpace = true;
-        ExportSetting.ZipFile = true;
-        ExportSetting.exportBaseTypeMethod = true;
+        //ExportSetting.ExportNameSpace = true;
+        //ExportSetting.ZipFile = true;
+        //ExportSetting.exportBaseTypeMethod = true;
         
         if (EditorApplication.isCompiling)
         {
@@ -471,39 +469,88 @@ class MyDoCreateScriptAsset : EndNameEditAction
 }
 
 class ToLuaToolWindow : EditorWindow {
-    string myString = "C:\\Users\\user\\AppData\\Roaming\\Sublime Text 3\\Installed Packages";
-	bool groupEnabled = false;
-    bool myBool = true;
-	float myFloat = 1.23f;
+    static string path;
+    static bool exportzipfile = false;
+    static bool exportBaseMethod = true;
+    static bool exportNameSpace = true;
+    static string prefix = "cc";
+    static string replaceUserName = "";
 
-	// Add menu named "My Window" to the Window menu
-	//添加菜单项My Window到Window菜单
+    static string curUserName;
+
+    //添加菜单项My Window到Window菜单
     [MenuItem("Lua/CreateAutoCompleteFile")]
-	static void Init () {
+    static void Init()
+    {
         // Get existing open window or if none, make a new one:
+        Rect rect = new Rect(0, 0, 600, 150);
         //获取现有的打开窗口或如果没有，创建一个新的
-        ToLuaToolWindow window = EditorWindow.GetWindow(typeof(ToLuaToolWindow), false, "生成代码提示文件", true) as ToLuaToolWindow;
-	}
+        ToLuaToolWindow window = EditorWindow.GetWindowWithRect(typeof(ToLuaToolWindow), rect, true, "生成代码提示文件") as ToLuaToolWindow;
 
-	void OnGUI () {
-        Debug.Log("OnGUI");
-		GUILayout.Label ("Base Settings", EditorStyles.boldLabel);
-        myString = myString.Replace("user", Environment.UserName);
-        myString = EditorGUILayout.TextField ("插件路径:", myString);
+        path = PlayerPrefs.GetString("toluaToolPath", "C:\\Users\\user\\AppData\\Roaming\\Sublime Text 3\\Installed Packages");
+        curUserName =  Environment.UserName;
+        path = path.Replace("user", curUserName);
+
+        int exportZipFileInt = PlayerPrefs.GetInt("exportzipfile", 0);
+        exportzipfile = exportZipFileInt == 0 ? false : true;
+
+        int exportBaseMethodInt = PlayerPrefs.GetInt("exportBaseMethodInt", 0);
+        exportBaseMethod = exportBaseMethodInt == 0 ? false : true;
+
+        int exportNameSpaceInt = PlayerPrefs.GetInt("exportNameSpaceInt", 0);
+        exportNameSpace = exportNameSpaceInt == 0 ? false : true;
+
+        prefix = PlayerPrefs.GetString("prefixStr", "cc");
+        replaceUserName = PlayerPrefs.GetString("replaceUserName", "");
+    }
+
+    void OnGUI()
+    {
+        //GUILayout.Label("Base Settings", EditorStyles.boldLabel);
+        
+        path = EditorGUILayout.TextField("插件路径:", path);
+        PlayerPrefs.SetString("toluaToolPath", path);
+
+        exportzipfile = EditorGUILayout.Toggle("是否打包文件", exportzipfile);
+        PlayerPrefs.SetInt("exportzipfile", exportzipfile ? 1 : 0);
+        ExportSetting.ZipFile = exportzipfile;
+
+        exportBaseMethod = EditorGUILayout.Toggle("是否包含输出父类方法", exportBaseMethod);
+        PlayerPrefs.SetInt("exportBaseMethodInt", exportBaseMethod ? 1 : 0);
+        ExportSetting.exportBaseTypeMethod = exportBaseMethod;
+
+        exportNameSpace = EditorGUILayout.Toggle("代码提示是否包含命名空间", exportNameSpace);
+        PlayerPrefs.SetInt("exportNameSpaceInt", exportNameSpace ? 1 : 0);
+        ExportSetting.ExportNameSpace = exportNameSpace;
+
+        prefix = EditorGUILayout.TextField("类前缀:", prefix);
+        PlayerPrefs.SetString("prefixStr", prefix);
+
+        replaceUserName = EditorGUILayout.TextField("替换用户名:", replaceUserName);
+        
+        PlayerPrefs.SetString("replaceUserName", replaceUserName);
+        if (replaceUserName != "")
+        {
+            string[] str = path.Split('\\');
+            curUserName = str[2];
+            path = path.Replace(curUserName, replaceUserName);
+            curUserName = replaceUserName;
+        }
 
         if (GUILayout.Button("OK"))
         {
             try
             {
                 LuaToolEditor.CreateAutoComplete();
-                Rolance.FileHelper.Instance.CopyFile(Application.dataPath + "/../tolua_autocomplete.sublime-package", myString + "/" + "tolua_autocomplete.sublime-package");
+                Rolance.FileHelper.Instance.CopyFile(Application.dataPath + "/../tolua_autocomplete.sublime-package", path + "/" + "tolua_autocomplete.sublime-package");
                 Debug.Log("finish");
             }
             catch (Exception)
             {
-                
+
                 throw;
             }
         }
-	}
+    }
+
 }
