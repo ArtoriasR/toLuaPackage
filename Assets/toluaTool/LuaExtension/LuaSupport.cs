@@ -162,7 +162,7 @@ public class LuaSupport : MonoBehaviour
         LuaCoroutine.Register(luaState, this);
     }
 
-    protected virtual void AddSearchPath()
+    public static void AddSearchPath(LuaState luaState)
     {
         //从文件读入或是assetbundle
         if (!LuaFileUtils.Instance.beZip)
@@ -205,7 +205,7 @@ public class LuaSupport : MonoBehaviour
         OpenLibs();
         luaState.LuaSetTop(0);
         Bind();
-        AddSearchPath();
+        AddSearchPath(luaState);
         LoadLuaFiles();
     }
 

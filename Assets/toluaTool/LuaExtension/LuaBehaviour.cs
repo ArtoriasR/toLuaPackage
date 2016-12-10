@@ -29,7 +29,7 @@ public class LuaBehaviour : MonoBehaviour
 
     public string luaFileName = "";
 
-    public List<UnityEngine.Object> argsList = new List<UnityEngine.Object>();
+    //public List<UnityEngine.Object> argsList = new List<UnityEngine.Object>();
 
     public LuaFunction luaAwake = null;
     public LuaFunction luaOnEnable = null;
@@ -42,29 +42,24 @@ public class LuaBehaviour : MonoBehaviour
 
     protected LuaTable _luaTable;
     private bool _isInit = false;
-
-    protected void Awake()
-    {
-        if (luaFileName != "" && luaFileName != null)
-            SetLuaFileName ( luaFileName);
-    }
     public void SetLuaFileName(string value)
     {
-   
-            luaFileName = value;
-            DoLuaFile();
+        luaFileName = value;
+        DoLuaFile();
+    }
+
+    private void Init()
+    {
+        if (!_isInit)
+        {
+            if (luaFileName != "" && luaFileName != null)
+                SetLuaFileName(luaFileName);
+        }
     }
 
     public void DoLuaFile()
     {
-        /*使用scroll view的时候，里面的cell默认是关闭的，导致LuaBehavior没有初始化，需求比较急，还没想好怎么处理，临时打开
-        if (enabled == false)
-        {
-            return; 
-        }
-        */
         Debugger.Log("LuaBehaviour:" + luaFileName + " Init");
-        //LuaSupport.lua.Require(_luaFileName);
         if (_luaTable != null)
         {
             if (luaOnDestroy != null)
@@ -87,6 +82,7 @@ public class LuaBehaviour : MonoBehaviour
         object[] r = createFunc.Call(gameObject);
         _luaTable = (LuaTable)r[0];
         _luaTable["luaBehaviour"] = this;
+        
         luaAwake = _luaTable.GetLuaFunction("Awake");
         luaOnEnable = _luaTable.GetLuaFunction("OnEnable");
         luaStart = _luaTable.GetLuaFunction("Start");
@@ -97,8 +93,9 @@ public class LuaBehaviour : MonoBehaviour
         luaOnTriggerEnter = _luaTable.GetLuaFunction("OnTriggerEnter");
         luaOnTriggerExit = _luaTable.GetLuaFunction("OnTriggerExit");
 
-        LuaTable argsTable = (LuaTable)_luaTable["argsList"];
         /*
+        LuaTable argsTable = (LuaTable)_luaTable["argsList"];
+        
         for (int i = 0; i < argsList.Count; i++)
         {
             if (argsList[i] != null)
@@ -106,50 +103,28 @@ public class LuaBehaviour : MonoBehaviour
                 argsTable[(i + 1)] = argsList[i];
             }
         }
-        
-        for (int i = 0; i < initParamNames.Count; i++)
-        {
-            object obj = initParamObjectValues.Count > i ? initParamObjectValues[i] : null;
-            if (obj == null)
-                obj = initParamStringValues.Count > i ? initParamStringValues[i] : null;
-            if (obj is LuaEventComponent)
-                _luaTable[initParamNames[i]] = ((LuaEventComponent)obj).uEvent;
-            else
-            {
-                if (obj is string && (((string)obj) == "") && initParamTypes[i] != "string" && initParamTypes[i] != "String")
-                    _luaTable[initParamNames[i]] = null;
-                else
-                    _luaTable[initParamNames[i]] = obj;
-            }
-        }
         */
+        _isInit = true;
+    }
+    protected void Awake()
+    {
+        Init();
         if (luaAwake != null)
             luaAwake.Call();
-
-        _isInit = true;
-        /*
-        for (int i = 0; i < mActionsWhenInit.Count; i++)
-        {
-            mActionsWhenInit[i].Invoke((Action<object>)mActionParamsWhenInit[i][0], (string)mActionParamsWhenInit[i][1], (object[])mActionParamsWhenInit[i][2]);
-        }
-        mActionsWhenInit.Clear();
-        mActionParamsWhenInit.Clear();
-        */
-
     }
 
     void OnEnable()
     {
+        Init();
         if (luaOnEnable != null)
             luaOnEnable.Call();
     }
 
     void Start()
     {
-        //Debug.Log("luabehaviour :" + _luaFileName + ",start");                                                                                                                                                                                                                                                                                                                         
+        Init();                                                                                                                                                                                                                                                                                          
         if (luaStart != null)
         {
-            //Debug.Log("luabehaviour :" + _luaFileName + ",start call");
             luaStart.Call();
         }
     }
@@ -164,7 +139,6 @@ public class LuaBehaviour : MonoBehaviour
     {
         if (luaOnDestroy != null)
             luaOnDestroy.Call();
-        //TO DO 释放luafunction
     }
     void OnTriggerEnter(Collider other)
     {

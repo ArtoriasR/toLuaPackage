@@ -17,7 +17,6 @@ public class LuaToolEditor
     public static Type type = null;
     public static Type baseType = null;
     public static bool isStaticClass = true;
-    static HashSet<string> usingList = new HashSet<string>();
     public static string wrapClassName = "";
     public static string exportName = "";
     static StringBuilder sb;
@@ -62,10 +61,6 @@ public class LuaToolEditor
     public static void CreateAutoComplete()
     {
         Debug.Log("CreateAutoComplete");
-        //ExportSetting.ExportNameSpace = true;
-        //ExportSetting.ZipFile = true;
-        //ExportSetting.exportBaseTypeMethod = true;
-        
         if (EditorApplication.isCompiling)
         {
             EditorUtility.DisplayDialog("警告", "请等待编辑器完成编译再执行此功能", "确定");
@@ -98,7 +93,7 @@ public class LuaToolEditor
             isStaticClass = list[i].IsStatic;
             baseType = list[i].baseType;
             wrapClassName = list[i].wrapName;
-            Generate(CustomSettings.saveDir);
+            Generate();
         }
 
         if (ExportSetting.ZipFile)
@@ -115,7 +110,7 @@ public class LuaToolEditor
         AssetDatabase.Refresh();
     }
 
-    public static void Generate(string dir)
+    public static void Generate()
     {
         if (type.IsInterface && type != typeof(System.Collections.IEnumerator))
         {
@@ -123,10 +118,6 @@ public class LuaToolEditor
         }
 
         Debugger.Log("Begin Generate lua Wrap for class {0}", className);
-        //Rolance.AutoCompleteExport.Clear();
-
-        sb = new StringBuilder();
-        usingList.Add("System");
 
         if (wrapClassName == "")
         {
@@ -399,7 +390,6 @@ public class LuaToolEditor
         type = null;
         baseType = null;
         isStaticClass = false;
-        usingList.Clear();
         op = MetaOp.None;
         sb = new StringBuilder();
         fields = null;
@@ -469,6 +459,7 @@ class MyDoCreateScriptAsset : EndNameEditAction
 }
 
 class ToLuaToolWindow : EditorWindow {
+    static string templePath = "C:\\Users\\user\\AppData\\Roaming\\Sublime Text 3\\Installed Packages";
     static string path;
     static bool exportzipfile = false;
     static bool exportBaseMethod = true;
@@ -487,7 +478,9 @@ class ToLuaToolWindow : EditorWindow {
         //获取现有的打开窗口或如果没有，创建一个新的
         ToLuaToolWindow window = EditorWindow.GetWindowWithRect(typeof(ToLuaToolWindow), rect, true, "生成代码提示文件") as ToLuaToolWindow;
 
-        path = PlayerPrefs.GetString("toluaToolPath", "C:\\Users\\user\\AppData\\Roaming\\Sublime Text 3\\Installed Packages");
+        path = PlayerPrefs.GetString("toluaToolPath", templePath);
+        if (path == "")
+            path = templePath;
         curUserName =  Environment.UserName;
         path = path.Replace("user", curUserName);
 
@@ -511,19 +504,19 @@ class ToLuaToolWindow : EditorWindow {
         path = EditorGUILayout.TextField("插件路径:", path);
         PlayerPrefs.SetString("toluaToolPath", path);
 
-        exportzipfile = EditorGUILayout.Toggle("是否打包文件", exportzipfile);
+        exportzipfile = EditorGUILayout.Toggle("打包文件", exportzipfile);
         PlayerPrefs.SetInt("exportzipfile", exportzipfile ? 1 : 0);
         ExportSetting.ZipFile = exportzipfile;
 
-        exportBaseMethod = EditorGUILayout.Toggle("是否包含输出父类方法", exportBaseMethod);
+        exportBaseMethod = EditorGUILayout.Toggle("包含父类方法", exportBaseMethod);
         PlayerPrefs.SetInt("exportBaseMethodInt", exportBaseMethod ? 1 : 0);
         ExportSetting.exportBaseTypeMethod = exportBaseMethod;
 
-        exportNameSpace = EditorGUILayout.Toggle("代码提示是否包含命名空间", exportNameSpace);
+        exportNameSpace = EditorGUILayout.Toggle("包含命名空间", exportNameSpace);
         PlayerPrefs.SetInt("exportNameSpaceInt", exportNameSpace ? 1 : 0);
         ExportSetting.ExportNameSpace = exportNameSpace;
 
-        prefix = EditorGUILayout.TextField("类前缀:", prefix);
+        prefix = EditorGUILayout.TextField("输入前缀:", prefix);
         PlayerPrefs.SetString("prefixStr", prefix);
 
         replaceUserName = EditorGUILayout.TextField("替换用户名:", replaceUserName);

@@ -86,22 +86,6 @@ Object.create = function()
 	this.Class = Object
 	this.name = "Object"
 
-	--[[
-	this.__index = this
-	this.Pototype = Pototype
-
-	function this.instanceOf(Class)
-		return this.Class == Class
-	end
-
-	function this._trace(msg)
-		require("Utils")
-		_trace(this.name .. "::" .. msg)
-	end
-	]]
-
-
-
 	return this
 end
 
