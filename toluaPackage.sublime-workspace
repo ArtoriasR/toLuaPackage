@@ -1,0 +1,912 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"this",
+				"this.test.name"
+			],
+			[
+				"ccgameobj",
+				"ccGameObject:GetComponentsInParent"
+			],
+			[
+				"ccanimator",
+				"ccAnimator:GetTime"
+			],
+			[
+				"ccgameobjectscen",
+				"ccGameObject.isStatic\t(R&W_Boolean)"
+			],
+			[
+				"ccgameobject",
+				"ccGameObject.scene\t(R_UnityEngine.SceneManagement.Scene)"
+			],
+			[
+				"ccgameobje",
+				"ccGameObject:ToString"
+			],
+			[
+				"ccgameobjcollid",
+				"ccGameObject.collider2D\t(R_Component)"
+			],
+			[
+				"cccamera",
+				"ccCamera:RemoveAllCommandBuffers"
+			],
+			[
+				"Gameobject",
+				"GameObject:GetComponents"
+			],
+			[
+				"gameobjectgetcomponent",
+				"GameObject:GetComponent\t(String:type)"
+			],
+			[
+				"game",
+				"GameObject:GetComponent"
+			],
+			[
+				"animator",
+				"Animator:GetComponents"
+			],
+			[
+				"debug",
+				"Debugger.Log\t(String:str,Object:arg0,Object:arg1)"
+			],
+			[
+				"log",
+				"Debugger.Log\t(String:str,Object[]:param)"
+			],
+			[
+				"component",
+				"Component:GetComponents"
+			],
+			[
+				"resour",
+				"Resources.Load\t(String:path)"
+			],
+			[
+				"gameobje",
+				"GameObject:AddComponent"
+			],
+			[
+				"myclasssend",
+				"MyClass:SendMessageUpwards\t(String:methodName)"
+			],
+			[
+				"myclassgetcomponentsinparent",
+				"MyClass:GetComponentsInParent\t(Boolean:includeInactive,List`1[T]:results)"
+			],
+			[
+				"mycalssendmessage",
+				"MyClass:SendMessage\t(String:methodName,Object:value,SendMessageOptions:options)"
+			],
+			[
+				"load",
+				"Load"
+			],
+			[
+				"for",
+				"fori\tfor i,v in ipairs()"
+			],
+			[
+				"js",
+				"json.decode"
+			],
+			[
+				"Textasset",
+				"UnityEngine.TextAsset"
+			],
+			[
+				"resource",
+				"Resources.Load\t(String)"
+			],
+			[
+				"Component",
+				"UnityEngine.Component"
+			],
+			[
+				"Debugger",
+				"LuaInterface.Debugger"
+			],
+			[
+				"debu",
+				"debug.getinfo"
+			],
+			[
+				"in",
+				"init"
+			],
+			[
+				"table",
+				"table_print(_G"
+			],
+			[
+				"MyClass",
+				"MyClass"
+			],
+			[
+				"Mycl",
+				"MyClassType"
+			],
+			[
+				"Myc",
+				"MyClassType"
+			],
+			[
+				"My",
+				"MyClass"
+			],
+			[
+				"gameob",
+				"GameObject:ToString"
+			],
+			[
+				"globa",
+				"Global.test1"
+			],
+			[
+				"fun",
+				"fun\tRolance.LuaTool.LuaGameObject:function start(gameObject)"
+			],
+			[
+				"gam",
+				"UnityEngine.GameObject.guiText"
+			],
+			[
+				"g",
+				"LuaGameObject:Awake"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Assets/toluaTool/Lua/Common/LuaGameObject.lua",
+			"settings":
+			{
+				"buffer_size": 466,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Artorias/Desktop/userdatademo1/userdatademo1/userdatademo1/Module.h",
+			"settings":
+			{
+				"buffer_size": 382,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Artorias/Desktop/userdatademo1/userdatademo1/userdatademo1/Module.cpp",
+			"settings":
+			{
+				"buffer_size": 2102,
+				"encoding": "Western (Windows 1252)",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/Context.sublime-menu",
+			"settings":
+			{
+				"buffer_size": 193,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/Default.sublime-commands",
+			"settings":
+			{
+				"buffer_size": 61,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Artorias/Desktop/userdatademo1/userdatademo1/main.lua",
+			"settings":
+			{
+				"buffer_size": 236,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Lua/TestObj.lua",
+			"settings":
+			{
+				"buffer_size": 573,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/toluaTool/Lua/Common/Define.lua",
+			"settings":
+			{
+				"buffer_size": 414,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "SideBarFolders\nConvertToUTF8",
+			"settings":
+			{
+				"buffer_size": 28,
+				"line_ending": "Windows",
+				"name": "SideBarFolders"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 101.0,
+		"last_filter": "pack",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Install Package Control"
+			],
+			[
+				"creae",
+				"create go"
+			],
+			[
+				"create",
+				"create go"
+			],
+			[
+				"sspy",
+				"Set Syntax: Python"
+			],
+			[
+				"sslua",
+				"Set Syntax: Lua"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 151.0,
+		"history":
+		[
+			"other_views = [v for v in sublime.active_window().views() if v.id != view.id] print(other_views)",
+			"print(\"a\")",
+			"# Extends Sublime Text autocompletion to find matches in all open",
+			"LuaTool.AllAutocomplete"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/GitCode/toluaPackage/Assets"
+	],
+	"file_history":
+	[
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/Context.sublime-menu",
+		"/J/doc/LL.txt",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/toluaAutocomplete.py",
+		"/F/UnityWork/OnePiecePure/Assets/Editor/Lua/LuaBehaviourInspector.cs",
+		"/F/GitCode/toluaPackage/Assets/Lua/TestObj.lua",
+		"/F/GitCode/HelloPython/HelloWorld.py",
+		"/F/GitCode/toluaPackage/Assets/toluaTool/Lua/Common/Object.lua",
+		"/F/GitCode/toluaPackage/Assets/toluaTool/Lua/Common/LuaGameObject.lua",
+		"/F/GitCode/toluaTool/net.sublime-snippet",
+		"/F/GitCode/toluaTool/myextension.sublime-completions",
+		"/F/GitCode/toluaPackage/Assets/Lua/Main.lua",
+		"/F/GitCode/toluaPackage/Assets/Lua/GameEntrance.lua",
+		"/F/GitCode/toluaPackage/Assets/toluaTool/Editor/template.lua",
+		"/F/GitCode/toluaPackage/Assets/toluaTool/Lua/LuaEntrance.lua",
+		"/F/GitCode/toluaTool/LuaGameObject.sublime-completions",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/LuaGameObject.sublime-completions",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/net.sublime-snippet",
+		"/F/GitCode/toluaTool/toluaAutocomplete.py",
+		"/F/GitCode/toluaTool/lua.sublime-completions",
+		"/F/GitCode/toluaPackage/output/UnityEngine_AssetBundleWrap.sublime-completions",
+		"/F/GitCode/toluaPackage/output/UnityEngine_AnimationClipWrap.sublime-completions",
+		"/F/GitCode/toluaPackage/output/LuaInterface_DebuggerWrap.sublime-completions",
+		"/F/GitCode/toluaPackage/output/UnityEngine_AnimationBlendModeWrap.sublime-completions",
+		"/C/Users/Artorias/AppData/Local/Temp/Rar$DRa0.475/UnityEngine_AnimationStateWrap.sublime-completions",
+		"/C/Users/Artorias/AppData/Local/Temp/Rar$DRa0.540/UnityEngine_AnimationBlendModeWrap.sublime-completions",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/a/UnityEngine_GameObjectWrap.sublime-completions",
+		"/C/Users/Artorias/AppData/Local/Temp/Rar$DRa0.426/UnityEngine_GameObjectWrap.sublime-completions",
+		"/C/Users/Artorias/AppData/Local/Temp/Rar$DRa0.116/UnityEngine_AnimatorWrap.sublime-completions",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Installed Packages/UnityEngine_GameObjectWrap.sublime-completions",
+		"/F/GitCode/toluaPackage/Assets/ToLua/Lua/tolua.lua",
+		"/F/GitCode/toluaPackage/Assets/toluaTool/Lua/Example/TestCJsonLocalStorage.lua",
+		"/F/GitCode/toluaPackage/Assets/toluaTool/Lua/Common/Define.lua",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/lua.sublime-completions",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/Default.sublime-commands",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/toluaExtend.sublime-completions",
+		"/F/GitCode/toluaTool/toluaExtend.sublime-completions",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/CreateGo.py",
+		"/F/GitCode/toluaPackage/Assets/toluaTool/Lua/Common/eventlib.lua",
+		"/F/GitCode/toluaPackage/Assets/toluaTool/Lua/Common/events.lua",
+		"/F/UnityWork/ToLuaPackage/Assets/Lua/Common/Define.lua",
+		"/F/UnityWork/ToLuaPackage/output/MyClassWrap.sublime-completions",
+		"/F/UnityWork/ToLuaPackage/Assets/Lua/fdsfdsfdsfdsf.lua",
+		"/C/Users/Artorias/Desktop/test.js",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/AllAutocomplete.py",
+		"/C/Users/Artorias/Desktop/test.py",
+		"/F/UnityWork/ToLuaPackage/Assets/ToLua/Lua/cjson/util.lua",
+		"/F/UnityWork/ToLuaPackage/Assets/Lua/LuaEntrance.lua",
+		"/F/UnityWork/ToLuaPackage/Assets/ToLua/Lua/tolua.lua",
+		"/C/Users/Artorias/AppData/Local/Temp/Rar$DIa0.871/README.md",
+		"/C/Users/Artorias/AppData/Local/Temp/Rar$DRa0.979/UnityEngine_ComponentWrap.sublime-completions",
+		"/D/Sublime Text 3 official/AllAutocomplete.py",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/sublime.py",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/sublime_plugin.py",
+		"/C/Users/Artorias/AppData/Local/Temp/Rar$DRa0.554/UnityEngine_GameObjectWrap.sublime-completions",
+		"/C/Users/Artorias/AppData/Local/Temp/Rar$DRa0.982/UnityEngine_GameObjectWrap.sublime-completions",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/testsnippet.sublime-snippet",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/greeting.sublime-snippet",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/AllAutoComplete/AllAutocomplete.py",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"pStudent",
+			"luaL_register",
+			"self",
+			"initParamTypes",
+			"DrawUI",
+			"isReload",
+			"Button",
+			"load",
+			"MemoryStream",
+			"MemoryStream'",
+			"serializedObject",
+			"isPlaying",
+			"initParamNames",
+			"DrawUI",
+			"keyDic",
+			"BeginVertical",
+			"Dic",
+			"dic",
+			"luaFilePro",
+			"luaBehaviour",
+			"initParamNames",
+			"type",
+			"Awake",
+			"MyClass",
+			"\",\n",
+			"fix_truncation",
+			"without_duplicates",
+			"LoginGameReq",
+			"toluaAutocomplete",
+			"remove",
+			"insert",
+			"MAX_FIX_TIME_SECS_PER_VIEW",
+			"MAX_WORDS_PER_VIEW",
+			"MAX_WORD_SIZE",
+			"MIN_WORD_SIZE",
+			"fix_truncation",
+			"filter_words",
+			"MAX_WORD_SIZE",
+			"MAX_VIEWS",
+			"DebugServerIp",
+			"mobdebug",
+			"Game",
+			"TestCJsonLocalStorage",
+			"MyClass",
+			"Create",
+			"Pleasurazy",
+			"pleasurazy",
+			"PleasurazyAPICompletionsPackage",
+			"debug",
+			"SaveFile",
+			"cjson",
+			"json",
+			"ut.",
+			"save",
+			"Save",
+			"this.util",
+			"util",
+			"print",
+			"serialise_value",
+			"json",
+			"JSON",
+			"json",
+			"return",
+			"tab",
+			"save",
+			"Save",
+			"testjson",
+			"file_load",
+			"load",
+			"util",
+			"typeof",
+			"indent",
+			"serialise_value",
+			"run_script",
+			"getinfo",
+			"is_empty_match",
+			"sublime_api",
+			"table_print",
+			"table_lib",
+			"MyClass",
+			"MyClassType",
+			"enumerate",
+			"start_time",
+			"empty",
+			"re",
+			"escape",
+			"is_empty_match",
+			"match",
+			"MAX_FIX_TIME_SECS_PER_VIEW",
+			"enumerate",
+			"fix_truncation",
+			"filter_words",
+			"MAX_WORD_SIZE",
+			"MIN_WORD_SIZE",
+			"on_query_completions",
+			"AllAutocomplete",
+			"on_query_completions",
+			"fix_truncation",
+			"入口类"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Assets/toluaTool/Lua/Common/LuaGameObject.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 466,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								466,
+								466
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Artorias/Desktop/userdatademo1/userdatademo1/userdatademo1/Module.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 382,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Artorias/Desktop/userdatademo1/userdatademo1/userdatademo1/Module.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2102,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								318,
+								318
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/Context.sublime-menu",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 193,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Artorias/AppData/Roaming/Sublime Text 3/Packages/LuaTool/Default.sublime-commands",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 61,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								30,
+								30
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/Artorias/Desktop/userdatademo1/userdatademo1/main.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 236,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								236,
+								236
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Assets/Lua/TestObj.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 573,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								207,
+								207
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 99.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Assets/toluaTool/Lua/Common/Define.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 414,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								414,
+								414
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								28,
+								28
+							]
+						],
+						"settings":
+						{
+							"auto_name": "SideBarFolders",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 231.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "toluaPackage.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"def",
+				"Lua\\Common\\Define.lua"
+			],
+			[
+				"testobj",
+				"Assets\\Lua\\TestObj.lua"
+			],
+			[
+				"luagameob",
+				"Lua\\Common\\LuaGameObject.lua"
+			],
+			[
+				"object",
+				"Lua\\Common\\Object.lua"
+			],
+			[
+				"luagameobject",
+				"Lua\\Common\\LuaGameObject.lua"
+			],
+			[
+				"defin",
+				"Lua\\Common\\Define.lua"
+			],
+			[
+				"luagame",
+				"Common\\LuaGameObject.lua"
+			],
+			[
+				"luaen",
+				"LuaEntrance.lua"
+			],
+			[
+				"define",
+				"Common\\Define.lua"
+			],
+			[
+				"util",
+				"Lua\\cjson\\util.lua"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 311.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

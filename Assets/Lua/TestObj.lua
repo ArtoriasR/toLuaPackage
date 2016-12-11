@@ -20,6 +20,8 @@ function TestObj.create(gameObject)
 
 	function this.Start()
 		print(this.test.name)
+
+		
 	end
 
 	return this

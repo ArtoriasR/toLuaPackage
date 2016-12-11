@@ -134,7 +134,7 @@ public class LuaToolEditor
         else
         {
             InitMethods();
-            InitProperty();
+            InitField();
         }
 
         AutoCompleteExport.ExportClass(exportName);
@@ -207,7 +207,7 @@ public class LuaToolEditor
         }
     }
 
-    static void InitProperty()
+    static void InitField()
     {
         fields = type.GetFields(BindingFlags.GetField | BindingFlags.SetField | BindingFlags.Instance | binding);
 

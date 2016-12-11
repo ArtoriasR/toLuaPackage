@@ -9,23 +9,23 @@ using System.Reflection;
 
 [CustomEditor(typeof(LuaBehaviour))]
 public class LuaBehaviourInspecter : Editor {
+    /// <summary>
+    /// 引用字典
+    /// string名字
+    /// Object引用
+    /// </summary>
     private Dictionary<string, UnityEngine.Object> reflectDict = new Dictionary<string, UnityEngine.Object>();
+    /// <summary>
+    /// 类型字典
+    /// string名字
+    /// string类型
+    /// </summary>
     private Dictionary<string, string> keyDic = new Dictionary<string, string>();
 
-    GUILayoutOption[] option = new GUILayoutOption[] { GUILayout.Width(250) };
-
-    //UnityEngine.Object obj = default(UnityEngine.Object);
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
         serializedObject.Update();
-
-        //UnityEngine.Object value = default(UnityEngine.Object);
-        //value = EditorGUI.ObjectField(new Rect(0, 0, 250, 40), new GUIContent("testtest"), value, typeof(UnityEngine.GameObject), true);
-        
-        //EditorGUILayout.ObjectField(new GUIContent("test"),value,typeof(UnityEngine.GameObject),true,null);
-
-        //return;
 
         LuaBehaviour behaviour = (target as LuaBehaviour);
 
@@ -81,7 +81,9 @@ public class LuaBehaviourInspecter : Editor {
         Load();
         Draw();
     }
-
+    /// <summary>
+    /// GUI上绘制参数自定义框
+    /// </summary>
     void Draw()
     {
         foreach (var item in keyDic)
@@ -93,7 +95,9 @@ public class LuaBehaviourInspecter : Editor {
             //value = EditorGUI.ObjectField(new Rect(0, 0, 250, 40), new GUIContent(item.Key.ToString()), value, (Type)item.Value, true);
         }
     }
-
+    /// <summary>
+    /// 反序列化获取数据
+    /// </summary>
     void Load()
     {
         keyDic.Clear();
@@ -104,14 +108,20 @@ public class LuaBehaviourInspecter : Editor {
 
         for (int i = 0; i < targetKeyList.arraySize; i++)
         {
+            //名字
             string key = targetKeyList.GetArrayElementAtIndex(i).stringValue;
+            //引用、值
             UnityEngine.Object value = targetValueList.GetArrayElementAtIndex(i).objectReferenceValue;
+            //类型
             string t = targetTypeList.GetArrayElementAtIndex(i).stringValue;
 
             keyDic.Add(key, t);
             reflectDict.Add(key, value);
         }
     }
+    /// <summary>
+    /// 序列化存储数据
+    /// </summary>
     void Save()
     {
         if (keyDic.Count > 0)
@@ -123,6 +133,7 @@ public class LuaBehaviourInspecter : Editor {
             targetKeyList.ClearArray();
             targetValueList.ClearArray();
             targetTypeList.ClearArray();
+
             foreach (var item in keyDic)
             {
                 //名字
@@ -141,13 +152,7 @@ public class LuaBehaviourInspecter : Editor {
             serializedObject.ApplyModifiedProperties();
         }
     }
-    void OnGUI()
-    {
-        if (GUILayout.Button("Test"))
-        {
-            Debug.Log("good");
-        }
-    }
+
     /// <summary>
     /// From:http://answers.unity3d.com/questions/206665/typegettypestring-does-not-work-in-unity.html
     /// Author:jahroy
