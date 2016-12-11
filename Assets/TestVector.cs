@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class TestVector : MonoBehaviour {
     List<Vector3> list = new List<Vector3>();
+    public int i;
+    public Vector3 vect3;
 	// Use this for initialization
 	void Start () {
 	

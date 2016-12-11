@@ -12,6 +12,7 @@ function LuaGameObject.create(gameObject)
         this.transform = gameObject.transform
     end
 
+    this.argsList = {}
 	this.initParamNames={}
 
 	function this.AddMember(varType, name)

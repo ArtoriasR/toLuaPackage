@@ -101,4 +101,10 @@ public static class LuaTool
         }
         return dict;
     }
+
+    public static void Debug(LuaTable tab)
+    {
+        object[] objArr = tab.ToArray();
+
+    }
 }

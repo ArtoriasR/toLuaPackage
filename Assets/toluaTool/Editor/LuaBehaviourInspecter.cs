@@ -9,16 +9,29 @@ using System.Reflection;
 
 [CustomEditor(typeof(LuaBehaviour))]
 public class LuaBehaviourInspecter : Editor {
-    private static Dictionary<string, UnityEngine.Object> dic = new Dictionary<string, UnityEngine.Object>();
-    private static Dictionary<string, Type> keyDic = new Dictionary<string, Type>();
+    private Dictionary<string, UnityEngine.Object> reflectDict = new Dictionary<string, UnityEngine.Object>();
+    private Dictionary<string, string> keyDic = new Dictionary<string, string>();
+
     GUILayoutOption[] option = new GUILayoutOption[] { GUILayout.Width(250) };
+
     //UnityEngine.Object obj = default(UnityEngine.Object);
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
+        serializedObject.Update();
+
+        //UnityEngine.Object value = default(UnityEngine.Object);
+        //value = EditorGUI.ObjectField(new Rect(0, 0, 250, 40), new GUIContent("testtest"), value, typeof(UnityEngine.GameObject), true);
+        
+        //EditorGUILayout.ObjectField(new GUIContent("test"),value,typeof(UnityEngine.GameObject),true,null);
+
+        //return;
+
+        LuaBehaviour behaviour = (target as LuaBehaviour);
+
         if (GUILayout.Button("GetArgs"))
         {
-            dic.Clear();
+            reflectDict.Clear();
             keyDic.Clear();
 
             LuaState luaState = new LuaState();
@@ -38,7 +51,6 @@ public class LuaBehaviourInspecter : Editor {
             LuaBinder.Bind(luaState);
             LuaSupport.AddSearchPath(luaState);
             luaState.Require("Define");
-            LuaBehaviour behaviour = (target as LuaBehaviour);
 
             luaState.DoFile(behaviour.luaFileName);
 
@@ -54,28 +66,79 @@ public class LuaBehaviourInspecter : Editor {
                 string fullArgs = Convert.ToString(luaClassArgs[i]);
                 string[] typeArr = fullArgs.Split(new char[] { '=' });
                 string typeName = typeArr[0];
-                string type = typeArr[1];
-                Type t = GetType(type);
+                string t = typeArr[1];
                 UnityEngine.Object obj = default(UnityEngine.Object);
-                //obj = EditorGUILayout.ObjectField(new GUIContent(typeName), obj, t, true, option);
-                obj = EditorGUI.ObjectField(new Rect(0, 0, 250, 40), new GUIContent(typeName), obj, t, true);
-                if (!dic.ContainsKey(typeName))
+                
+                if (!reflectDict.ContainsKey(typeName))
                 {
-                    dic.Add(typeName, obj);
+                    reflectDict.Add(typeName, obj);
                     keyDic.Add(typeName, t);
                 }
             }
             luaState.Dispose();
         }
+        Save();
+        Load();
+        Draw();
+    }
 
+    void Draw()
+    {
+        foreach (var item in keyDic)
+        {
+            string key = item.Key;
+            string t = item.Value;
+            UnityEngine.Object value = reflectDict[key];
+            reflectDict[key] = EditorGUILayout.ObjectField(new GUIContent(key), value, GetType(t), true, null);
+            //value = EditorGUI.ObjectField(new Rect(0, 0, 250, 40), new GUIContent(item.Key.ToString()), value, (Type)item.Value, true);
+        }
+    }
+
+    void Load()
+    {
+        keyDic.Clear();
+        reflectDict.Clear();
+        SerializedProperty targetKeyList = serializedObject.FindProperty("keyList");
+        SerializedProperty targetValueList = serializedObject.FindProperty("valueList");
+        SerializedProperty targetTypeList = serializedObject.FindProperty("typeList");
+
+        for (int i = 0; i < targetKeyList.arraySize; i++)
+        {
+            string key = targetKeyList.GetArrayElementAtIndex(i).stringValue;
+            UnityEngine.Object value = targetValueList.GetArrayElementAtIndex(i).objectReferenceValue;
+            string t = targetTypeList.GetArrayElementAtIndex(i).stringValue;
+
+            keyDic.Add(key, t);
+            reflectDict.Add(key, value);
+        }
+    }
+    void Save()
+    {
         if (keyDic.Count > 0)
         {
+            SerializedProperty targetKeyList = serializedObject.FindProperty("keyList");
+            SerializedProperty targetValueList = serializedObject.FindProperty("valueList");
+            SerializedProperty targetTypeList = serializedObject.FindProperty("typeList");
+
+            targetKeyList.ClearArray();
+            targetValueList.ClearArray();
+            targetTypeList.ClearArray();
             foreach (var item in keyDic)
             {
-                UnityEngine.Object obj = default(UnityEngine.Object);
-                obj = EditorGUILayout.ObjectField(new GUIContent(item.Key), obj, item.Value, true, option);
-                //obj = EditorGUI.ObjectField(new Rect(0, 0, 250, 40), new GUIContent(item.Key), obj, item.Value, true);
+                //名字
+                targetKeyList.InsertArrayElementAtIndex(targetKeyList.arraySize);
+                SerializedProperty key = targetKeyList.GetArrayElementAtIndex(targetKeyList.arraySize - 1);
+                key.stringValue = item.Key;
+                //引用
+                targetValueList.InsertArrayElementAtIndex(targetValueList.arraySize);
+                SerializedProperty value = targetValueList.GetArrayElementAtIndex(targetValueList.arraySize - 1);
+                value.objectReferenceValue = reflectDict[item.Key];
+                //类型
+                targetTypeList.InsertArrayElementAtIndex(targetTypeList.arraySize);
+                SerializedProperty t = targetTypeList.GetArrayElementAtIndex(targetTypeList.arraySize - 1);
+                t.stringValue = item.Value;
             }
+            serializedObject.ApplyModifiedProperties();
         }
     }
     void OnGUI()
@@ -93,7 +156,6 @@ public class LuaBehaviourInspecter : Editor {
     /// <returns></returns>
     public static Type GetType(string TypeName)
     {
-
         // Try Type.GetType() first. This will work with types defined
         // by the Mono runtime, in the same assembly as the caller, etc.
         var type = Type.GetType(TypeName);

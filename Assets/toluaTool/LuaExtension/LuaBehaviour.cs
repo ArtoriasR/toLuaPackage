@@ -6,6 +6,7 @@ using System;
 using UnityEngine.Events;
 using System.Reflection;
 using UnityEngine.EventSystems;
+using UnityEditor;
 
 /*
 ***********************************************
@@ -29,7 +30,16 @@ public class LuaBehaviour : MonoBehaviour
 
     public string luaFileName = "";
 
-    //public List<UnityEngine.Object> argsList = new List<UnityEngine.Object>();
+    [SerializeField]
+    [HideInInspector]
+    public List<string> keyList = new List<string>();
+    [SerializeField]
+    [HideInInspector]
+    public List<UnityEngine.Object> valueList = new List<UnityEngine.Object>();
+    [SerializeField]
+    [HideInInspector]
+    public List<string> typeList = new List<string>();
+
 
     public LuaFunction luaAwake = null;
     public LuaFunction luaOnEnable = null;
@@ -81,7 +91,7 @@ public class LuaBehaviour : MonoBehaviour
         LuaFunction createFunc = LuaSupport.lua.GetFunction(luaFileName + ".create");
         object[] r = createFunc.Call(gameObject);
         _luaTable = (LuaTable)r[0];
-        _luaTable["luaBehaviour"] = this;
+        //_luaTable["luaBehaviour"] = this;
         
         luaAwake = _luaTable.GetLuaFunction("Awake");
         luaOnEnable = _luaTable.GetLuaFunction("OnEnable");
@@ -93,19 +103,19 @@ public class LuaBehaviour : MonoBehaviour
         luaOnTriggerEnter = _luaTable.GetLuaFunction("OnTriggerEnter");
         luaOnTriggerExit = _luaTable.GetLuaFunction("OnTriggerExit");
 
-        /*
-        LuaTable argsTable = (LuaTable)_luaTable["argsList"];
-        
-        for (int i = 0; i < argsList.Count; i++)
-        {
-            if (argsList[i] != null)
-            {
-                argsTable[(i + 1)] = argsList[i];
-            }
-        }
-        */
+        SetArgsToLua();
+
         _isInit = true;
     }
+
+    private void SetArgsToLua()
+    {
+        for (int i = 0; i < keyList.Count; i++)
+        {
+            _luaTable[keyList[i]] = valueList[i];
+        }
+    }
+
     protected void Awake()
     {
         Init();

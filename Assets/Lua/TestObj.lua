@@ -14,11 +14,12 @@ function TestObj.create(gameObject)
 	this.AddMember("UnityEngine.GameObject", "test")
 	this.AddMember("UnityEngine.GameObject", "go1")
 	this.AddMember("UnityEngine.GameObject", "go2")
-	this.AddMember("UnityEngine.GameObject", "go3")
+	this.AddMember("UnityEngine.Vector3", "vect3")
 	this.AddMember("UnityEngine.Transform", "go4")
+	this.AddMember("UnityEngine.UI.Image","img")
 
 	function this.Start()
-
+		print(this.test.name)
 	end
 
 	return this
